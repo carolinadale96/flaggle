@@ -11,7 +11,7 @@ interface FlagCardProps {
 export default function FlagCard({ country, animationKey }: FlagCardProps) {
   return (
     <div key={animationKey} className="flag-card-enter flex justify-center py-3">
-      <div className="flag-container rounded-xl overflow-hidden" style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.18))" }}>
+      <div className="flag-container" style={{ filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.18))" }}>
         <CountryFlag
           iso2={country.iso2}
           style={{ width: "10rem", height: "auto", display: "block" }}
