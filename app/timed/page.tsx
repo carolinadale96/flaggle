@@ -179,6 +179,17 @@ export default function TimedPage() {
     }
   }, [game, selected, today]);
 
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.code === "Space" && game?.phase === "revealed") {
+        e.preventDefault();
+        handleNext();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [game?.phase, handleNext]);
+
   if (!game) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">

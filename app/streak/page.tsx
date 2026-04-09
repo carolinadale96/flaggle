@@ -122,6 +122,17 @@ export default function StreakPage() {
     setXpGained(0);
   }, [run]);
 
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.code === "Space" && run?.phase === "revealed") {
+        e.preventDefault();
+        handleNext();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [run?.phase, handleNext]);
+
   if (!run) {
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">

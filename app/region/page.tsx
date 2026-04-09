@@ -128,6 +128,17 @@ export default function RegionPage() {
     }
   }, [round, selected, continent]);
 
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.code === "Space" && round?.phase === "revealed") {
+        e.preventDefault();
+        handleNext();
+      }
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [round?.phase, handleNext]);
+
   // ── Continent picker ────────────────────────────────────────────────────────
   if (!continent || !round) {
     return (
