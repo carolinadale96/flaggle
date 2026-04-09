@@ -22,6 +22,7 @@ import ScoreScreen from "@/components/ScoreScreen";
 import AchievementToast from "@/components/AchievementToast";
 import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import SoundToggle from "@/components/SoundToggle";
 import Flame from "@/components/icons/Flame";
 import type { Achievement } from "@/lib/achievements";
 
@@ -174,7 +175,8 @@ export default function PlayPage() {
               <ProgressBar current={game.currentIndex + 1} total={game.questions.length} answers={game.answers.map((a) => a.correct)} />
             )}
           </div>
-          <ThemeToggle />
+          <SoundToggle />
+            <ThemeToggle />
         </div>
 
         {game.phase === "finished" ? (

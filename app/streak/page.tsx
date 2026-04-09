@@ -16,6 +16,7 @@ import AnswerGrid from "@/components/AnswerGrid";
 import EducationCard from "@/components/EducationCard";
 import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import SoundToggle from "@/components/SoundToggle";
 import Flame from "@/components/icons/Flame";
 import CorrectIcon from "@/components/icons/CorrectIcon";
 import WrongIcon from "@/components/icons/WrongIcon";
@@ -155,6 +156,7 @@ export default function StreakPage() {
               <ArrowLeft size={18} />
             </button>
             <h1 className="text-slate-900 dark:text-white font-bold text-base">Streak</h1>
+            <SoundToggle />
             <ThemeToggle />
           </div>
 
@@ -208,7 +210,8 @@ export default function StreakPage() {
               {pb > 0 && <span className="text-slate-400 text-xs ml-auto">Best: {pb}</span>}
             </div>
           </div>
-          <ThemeToggle />
+          <SoundToggle />
+            <ThemeToggle />
         </div>
 
         <XPBar totalXP={totalXP} xpGained={xpGained} />

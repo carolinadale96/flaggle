@@ -19,6 +19,7 @@ import ScoreScreen from "@/components/ScoreScreen";
 import AchievementToast from "@/components/AchievementToast";
 import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import SoundToggle from "@/components/SoundToggle";
 import Flame from "@/components/icons/Flame";
 import type { Achievement } from "@/lib/achievements";
 import { getStreak } from "@/lib/storage";
@@ -165,6 +166,7 @@ export default function HardPage() {
           </div>
           <div className="flex items-center gap-1.5">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-widest">Hard</span>
+            <SoundToggle />
             <ThemeToggle />
           </div>
         </div>

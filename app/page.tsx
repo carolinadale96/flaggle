@@ -12,6 +12,7 @@ import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
 import InstallBanner from "@/components/InstallBanner";
+import OnboardingModal from "@/components/OnboardingModal";
 import { Edit3, Timer, Globe, Zap } from "lucide-react";
 import Flame from "@/components/icons/Flame";
 import Trophy from "@/components/icons/Trophy";
@@ -42,6 +43,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center justify-center px-4">
+      <OnboardingModal />
       <div className="w-full max-w-sm space-y-4">
 
         {/* Header */}

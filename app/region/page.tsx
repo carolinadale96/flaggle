@@ -17,6 +17,7 @@ import AnswerGrid from "@/components/AnswerGrid";
 import EducationCard from "@/components/EducationCard";
 import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
+import SoundToggle from "@/components/SoundToggle";
 import Flame from "@/components/icons/Flame";
 import ContinentIcon from "@/components/icons/ContinentIcon";
 import CorrectIcon from "@/components/icons/CorrectIcon";
@@ -149,6 +150,7 @@ export default function RegionPage() {
               <ArrowLeft size={18} />
             </button>
             <h1 className="text-slate-900 dark:text-white font-bold text-base">Region mode</h1>
+            <SoundToggle />
             <ThemeToggle />
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm text-center">Pick a continent and practice all its flags.</p>
@@ -188,6 +190,7 @@ export default function RegionPage() {
               <ArrowLeft size={18} />
             </button>
             <h1 className="text-slate-900 dark:text-white font-bold text-base">{continent}</h1>
+            <SoundToggle />
             <ThemeToggle />
           </div>
 
@@ -240,6 +243,7 @@ export default function RegionPage() {
           </div>
           <div className="flex items-center gap-1.5">
             <ContinentIcon continent={continent} size={18} />
+            <SoundToggle />
             <ThemeToggle />
           </div>
         </div>
