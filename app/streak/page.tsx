@@ -6,7 +6,9 @@ import { ArrowLeft } from "lucide-react";
 import type { Answer, Question } from "@/types";
 import { getShuffledCountries } from "@/lib/daily";
 import { buildQuestionFromPool } from "@/lib/choices";
-import { getProgression, saveProgression, getLevelForXP, streakMultiplier, BASE_XP } from "@/lib/progression";
+import { getProgression, saveProgression, getLevelForXP, streakMultiplier } from "@/lib/progression";
+
+const STREAK_XP = 5; // Flat XP per correct, no streak multiplier (practice mode)
 import { getStreakPB, saveStreakPB } from "@/lib/storage";
 import { playCorrect, playWrong, playCombo, playLevelUp } from "@/lib/sounds";
 import FlagCard from "@/components/FlagCard";
@@ -68,8 +70,7 @@ export default function StreakPage() {
 
     if (isCorrect) {
       const newStreak = run.runStreak + 1;
-      const mult = Math.min(streakMultiplier(newStreak), 3.0); // cap at 3x
-      const xp = Math.round(BASE_XP * mult);
+      const xp = STREAK_XP;
       setXpGained(xp);
       const prog = getProgression();
       const newXP = prog.totalXP + xp;

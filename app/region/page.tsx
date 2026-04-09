@@ -6,7 +6,9 @@ import { ArrowLeft } from "lucide-react";
 import type { Answer, Question, Country } from "@/types";
 import { getShuffledCountries } from "@/lib/daily";
 import { buildQuestionFromPool } from "@/lib/choices";
-import { getProgression, saveProgression, getLevelForXP, xpForAnswer, streakMultiplier } from "@/lib/progression";
+import { getProgression, saveProgression, getLevelForXP, streakMultiplier } from "@/lib/progression";
+
+const REGION_XP = 3; // Flat XP per correct, no streak multiplier (practice mode)
 import { getRegionStats, saveRegionStats } from "@/lib/storage";
 import { playCorrect, playWrong, playCombo, playLevelUp } from "@/lib/sounds";
 import ProgressBar from "@/components/ProgressBar";
@@ -77,7 +79,7 @@ export default function RegionPage() {
     if (isCorrect) {
       const newStreak = inGameStreak + 1;
       setInGameStreak(newStreak);
-      const xp = xpForAnswer(true, newStreak);
+      const xp = REGION_XP;
       setXpGained(xp);
       const prog = getProgression();
       const newXP = prog.totalXP + xp;
