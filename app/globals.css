@@ -31,14 +31,9 @@
 .education-card-enter { animation: slideInUp 0.3s ease-out both; }
 .answer-shake       { animation: shake 0.4s ease-out; }
 
-/* ── Flag icon sizing ────────────────────────────────────── */
-.fi {
-  display: inline-block;
-  background-size: cover;
-  background-position: center;
-}
-
-.flag-container .fi {
+/* ── Flag container sizing ───────────────────────────────── */
+.flag-container svg {
   width: 10rem;
   height: 6.5rem;
+  display: block;
 }

@@ -19,6 +19,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Flame from "@/components/icons/Flame";
 import CorrectIcon from "@/components/icons/CorrectIcon";
 import WrongIcon from "@/components/icons/WrongIcon";
+import CountryFlag from "@/components/CountryFlag";
 
 type Phase = "playing" | "revealed" | "gameover";
 
@@ -174,7 +175,7 @@ export default function StreakPage() {
           <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3">
             <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Ended on</p>
             <div className="flex items-center gap-2">
-              <span className={`fi fi-${currentQuestion.country.iso2} rounded`} style={{ fontSize: "1.5rem", display: "inline-block" }} />
+              <CountryFlag iso2={currentQuestion.country.iso2} style={{ width: "2.1rem", height: "1.4rem", display: "inline-block", borderRadius: "3px" }} />
               <span className="font-semibold text-slate-900 dark:text-white">{currentQuestion.country.name}</span>
             </div>
           </div>

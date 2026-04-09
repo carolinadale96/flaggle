@@ -6,6 +6,7 @@ import ShareButton from "./ShareButton";
 import { buildShareText } from "@/lib/share";
 import CorrectIcon from "@/components/icons/CorrectIcon";
 import WrongIcon from "@/components/icons/WrongIcon";
+import CountryFlag from "@/components/CountryFlag";
 
 interface ScoreScreenProps {
   score: number;
@@ -61,7 +62,7 @@ export default function ScoreScreen({ score, total, answers, questions, date }: 
                     : "bg-red-50 dark:bg-red-900/30 border-red-200 dark:border-red-700/50"
                 }`}
               >
-                <span className={`fi fi-${q.country.iso2} rounded`} style={{ fontSize: "1rem", display: "inline-block", flexShrink: 0 }} />
+                <CountryFlag iso2={q.country.iso2} style={{ width: "1.4rem", height: "1rem", display: "inline-block", flexShrink: 0, borderRadius: "3px" }} />
                 <span className={`truncate font-medium text-xs ${correct ? "text-green-700 dark:text-green-300" : "text-red-700 dark:text-red-300"}`}>
                   {q.country.name}
                 </span>
