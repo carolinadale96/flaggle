@@ -32,8 +32,9 @@
 .answer-shake       { animation: shake 0.4s ease-out; }
 
 /* ── Flag container sizing ───────────────────────────────── */
-.flag-container svg {
+.flag-container img {
   width: 10rem;
   height: 6.5rem;
   display: block;
+  object-fit: cover;
 }
