@@ -141,7 +141,7 @@ export default function HardPage() {
 
   if (!game) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-sand dark:bg-slate-900 flex items-center justify-center">
         <div className="text-slate-400 animate-pulse text-sm">Loading...</div>
       </div>
     );
@@ -151,7 +151,7 @@ export default function HardPage() {
   const multiplier = inGameStreak >= 5 ? 2.0 : inGameStreak >= 3 ? 1.5 : 1.0;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+    <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
       <AchievementToast achievement={activeToast} onDone={() => setActiveToast(null)} />
       <div className="w-full max-w-sm space-y-3">
 

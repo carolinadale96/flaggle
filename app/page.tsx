@@ -42,7 +42,7 @@ export default function HomePage() {
   const progress = levelProgress(totalXP);
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center justify-center px-4">
       <OnboardingModal />
       <div className="w-full max-w-sm space-y-4">
 

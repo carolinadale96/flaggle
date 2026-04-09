@@ -193,7 +193,7 @@ export default function TimedPage() {
 
   if (!game) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-sand dark:bg-slate-900 flex items-center justify-center">
         <div className="text-slate-400 animate-pulse text-sm">Loading...</div>
       </div>
     );
@@ -203,7 +203,7 @@ export default function TimedPage() {
   const timedSelected = selected === "__timeout__" ? null : selected;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+    <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
       <AchievementToast achievement={activeToast} onDone={() => setActiveToast(null)} />
       <div className="w-full max-w-sm space-y-3">
 

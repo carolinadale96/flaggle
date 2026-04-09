@@ -28,7 +28,8 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta name="theme-color" content="#f59e0b" />
+        <meta name="theme-color" content="#f5f0e8" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)" />
         {/* Apply saved theme before first paint to avoid flash */}
         <script
           dangerouslySetInnerHTML={{
@@ -43,7 +44,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-full bg-slate-50 dark:bg-slate-900 antialiased transition-colors duration-200">
+      <body className="min-h-full bg-sand dark:bg-slate-900 antialiased transition-colors duration-200">
         {children}
         <Analytics />
       </body>

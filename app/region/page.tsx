@@ -143,7 +143,7 @@ export default function RegionPage() {
   // ── Continent picker ────────────────────────────────────────────────────────
   if (!continent || !round) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+      <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
         <div className="w-full max-w-sm space-y-5">
           <div className="flex items-center justify-between">
             <button onClick={() => router.push("/")} className="text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
@@ -183,7 +183,7 @@ export default function RegionPage() {
     const bestAccuracy = stats[continent]?.bestAccuracy ?? pct;
 
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+      <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
         <div className="w-full max-w-sm space-y-4">
           <div className="flex items-center justify-between">
             <button onClick={() => { setContinent(null); setRound(null); }} className="text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
@@ -231,7 +231,7 @@ export default function RegionPage() {
 
   // ── Game ────────────────────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+    <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
       <div className="w-full max-w-sm space-y-3">
 
         <div className="flex items-center gap-3">

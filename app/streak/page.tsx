@@ -137,7 +137,7 @@ export default function StreakPage() {
 
   if (!run) {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+      <div className="min-h-screen bg-sand dark:bg-slate-900 flex items-center justify-center">
         <div className="text-slate-400 animate-pulse text-sm">Loading...</div>
       </div>
     );
@@ -149,7 +149,7 @@ export default function StreakPage() {
   // ── Game over ───────────────────────────────────────────────────────────────
   if (run.phase === "gameover") {
     return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+      <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
         <div className="w-full max-w-sm space-y-5">
           <div className="flex items-center justify-between">
             <button onClick={() => router.push("/")} className="text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors p-1 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
@@ -195,7 +195,7 @@ export default function StreakPage() {
 
   // ── Playing / revealed ──────────────────────────────────────────────────────
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 flex flex-col items-center py-4 px-4">
+    <div className="min-h-screen bg-sand dark:bg-slate-900 flex flex-col items-center py-4 px-4">
       <div className="w-full max-w-sm space-y-3">
 
         <div className="flex items-center gap-3">
