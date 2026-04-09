@@ -24,7 +24,7 @@ export default function EducationCard({ country, wasCorrect }: EducationCardProp
           </p>
           <p className="text-slate-900 dark:text-white text-lg font-bold">{country.name}</p>
         </div>
-        <CountryFlag iso2={country.iso2} style={{ width: "2.8rem", height: "1.9rem", display: "block", borderRadius: "6px", boxShadow: "0 1px 3px rgba(0,0,0,0.2)", marginLeft: "auto", flexShrink: 0 }} />
+        <CountryFlag iso2={country.iso2} style={{ width: "2.8rem", height: "auto", display: "block", borderRadius: "6px", boxShadow: "0 1px 3px rgba(0,0,0,0.2)", marginLeft: "auto", flexShrink: 0 }} />
       </div>
 
       {/* Fun fact — always visible */}
@@ -84,7 +84,7 @@ export default function EducationCard({ country, wasCorrect }: EducationCardProp
               <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">🤔 Often confused with</p>
               {country.confusedWith.map((c, i) => (
                 <div key={i} className="flex items-center gap-3 bg-slate-50 dark:bg-slate-700/50 rounded-xl px-3 py-2 border border-slate-200 dark:border-slate-600/50">
-                  <CountryFlag iso2={c.iso2} style={{ width: "1.75rem", height: "1.17rem", display: "inline-block", flexShrink: 0, borderRadius: "3px" }} />
+                  <CountryFlag iso2={c.iso2} style={{ width: "1.75rem", height: "auto", display: "inline-block", flexShrink: 0, borderRadius: "3px" }} />
                   <div>
                     <p className="text-slate-900 dark:text-white text-sm font-medium">{c.name}</p>
                     <p className="text-slate-500 text-xs leading-snug">{c.note}</p>

@@ -34,7 +34,6 @@
 /* ── Flag container sizing ───────────────────────────────── */
 .flag-container img {
   width: 10rem;
-  height: 6.5rem;
+  height: auto;
   display: block;
-  object-fit: cover;
 }

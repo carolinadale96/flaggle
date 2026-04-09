@@ -177,7 +177,7 @@ export default function StreakPage() {
           <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-3">
             <p className="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-2">Ended on</p>
             <div className="flex items-center gap-2">
-              <CountryFlag iso2={currentQuestion.country.iso2} style={{ width: "2.1rem", height: "1.4rem", display: "inline-block", borderRadius: "3px" }} />
+              <CountryFlag iso2={currentQuestion.country.iso2} style={{ width: "2.1rem", height: "auto", display: "inline-block", borderRadius: "3px" }} />
               <span className="font-semibold text-slate-900 dark:text-white">{currentQuestion.country.name}</span>
             </div>
           </div>
