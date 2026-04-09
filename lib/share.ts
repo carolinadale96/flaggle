@@ -20,6 +20,6 @@ export function buildShareText(
     "",
     emojiRow,
     "",
-    "Play at flaggame.vercel.app",
+    "Play at flaggle-zeta.vercel.app",
   ].join("\n");
 }

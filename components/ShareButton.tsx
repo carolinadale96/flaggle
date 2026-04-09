@@ -41,10 +41,19 @@ export default function ShareButton({ text }: ShareButtonProps) {
     setTimeout(() => setCopied(false), 2000);
   }
 
-  function handleWhatsApp() {
-    // Use wa.me with raw text passed via navigator.share if possible,
-    // otherwise open the URL (text is plain ASCII-safe after emoji fix)
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
+  async function handleWhatsApp() {
+    // Use native share sheet if available — passes text without URL encoding (no emoji mangling)
+    if (navigator.share) {
+      try {
+        await navigator.share({ text });
+        return;
+      } catch {
+        // user cancelled — do nothing
+        return;
+      }
+    }
+    // Desktop fallback: whatsapp:// deep link goes directly to the app, skipping wa.me redirect
+    window.open(`whatsapp://send?text=${encodeURIComponent(text)}`, "_blank");
   }
 
   function handleSMS() {
