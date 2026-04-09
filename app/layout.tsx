@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Flaggle: Learn every country's flag",
   description:
     "A daily flag-learning game. Identify the flags of all 197 countries in the world. New flags every day.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Flaggle",
+  },
 };
 
 export default function RootLayout({
@@ -22,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="theme-color" content="#f59e0b" />
         {/* Apply saved theme before first paint to avoid flash */}
         <script
           dangerouslySetInnerHTML={{
