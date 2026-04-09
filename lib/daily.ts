@@ -52,3 +52,9 @@ export function getDailyCountries(dateString?: string): Country[] {
   const shuffled = seededShuffle(allCountries as Country[], rng);
   return shuffled.slice(0, 10);
 }
+
+// Get countries shuffled fresh with Math.random — for region/streak modes
+export function getShuffledCountries(filter?: (c: Country) => boolean): Country[] {
+  const pool = filter ? (allCountries as Country[]).filter(filter) : allCountries as Country[];
+  return seededShuffle([...pool], Math.random);
+}

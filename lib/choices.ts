@@ -48,3 +48,13 @@ export function buildQuestion(correct: Country, random: () => number): Question 
   const choices = seededShuffle(allChoiceNames, random);
   return { country: correct, choices };
 }
+
+// Build a Question using a custom pool for wrong choices (region/streak modes)
+export function buildQuestionFromPool(correct: Country, pool: Country[], random: () => number): Question {
+  const others = pool.filter((c) => c.name !== correct.name);
+  // Fall back to all countries if pool is too small
+  const wrongPool = others.length >= 3 ? others : (allCountries as Country[]).filter((c) => c.name !== correct.name);
+  const wrongs = seededSample(wrongPool, 3, random);
+  const choices = seededShuffle([correct.name, ...wrongs.map((c) => c.name)], random);
+  return { country: correct, choices };
+}

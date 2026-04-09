@@ -106,3 +106,76 @@ export function clearPartialGame(): void {
   if (!isBrowser()) return;
   localStorage.removeItem(TODAY_KEY);
 }
+
+// ── Hard mode daily result ────────────────────────────────────────────────────
+
+const HARD_TODAY_KEY = "flaggle_hard_today";
+
+export function getTodayHardResult(today: string): DayResult | null {
+  if (!isBrowser()) return null;
+  try {
+    const raw = localStorage.getItem(HARD_TODAY_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw) as DayResult;
+    return data.date === today ? data : null;
+  } catch { return null; }
+}
+
+export function saveTodayHardResult(result: DayResult): void {
+  if (!isBrowser()) return;
+  localStorage.setItem(HARD_TODAY_KEY, JSON.stringify(result));
+}
+
+// ── Timed mode daily result ───────────────────────────────────────────────────
+
+const TIMED_TODAY_KEY = "flaggle_timed_today";
+
+export function getTodayTimedResult(today: string): DayResult | null {
+  if (!isBrowser()) return null;
+  try {
+    const raw = localStorage.getItem(TIMED_TODAY_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw) as DayResult;
+    return data.date === today ? data : null;
+  } catch { return null; }
+}
+
+export function saveTodayTimedResult(result: DayResult): void {
+  if (!isBrowser()) return;
+  localStorage.setItem(TIMED_TODAY_KEY, JSON.stringify(result));
+}
+
+// ── Streak PB ─────────────────────────────────────────────────────────────────
+
+const STREAK_PB_KEY = "flaggle_streak_pb";
+
+export function getStreakPB(): number {
+  if (!isBrowser()) return 0;
+  try { return parseInt(localStorage.getItem(STREAK_PB_KEY) ?? "0", 10); } catch { return 0; }
+}
+
+export function saveStreakPB(pb: number): void {
+  if (!isBrowser()) return;
+  localStorage.setItem(STREAK_PB_KEY, String(pb));
+}
+
+// ── Region stats ──────────────────────────────────────────────────────────────
+
+const REGION_STATS_KEY = "flaggle_region_stats";
+
+export interface RegionStats {
+  [continent: string]: { bestAccuracy: number; roundsPlayed: number };
+}
+
+export function getRegionStats(): RegionStats {
+  if (!isBrowser()) return {};
+  try {
+    const raw = localStorage.getItem(REGION_STATS_KEY);
+    return raw ? JSON.parse(raw) as RegionStats : {};
+  } catch { return {}; }
+}
+
+export function saveRegionStats(stats: RegionStats): void {
+  if (!isBrowser()) return;
+  localStorage.setItem(REGION_STATS_KEY, JSON.stringify(stats));
+}

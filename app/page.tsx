@@ -12,6 +12,7 @@ import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
 import InstallBanner from "@/components/InstallBanner";
+import { Edit3, Timer, Globe, Zap } from "lucide-react";
 import Flame from "@/components/icons/Flame";
 import Trophy from "@/components/icons/Trophy";
 import CorrectIcon from "@/components/icons/CorrectIcon";
@@ -129,6 +130,33 @@ export default function HomePage() {
             Play Today →
           </Link>
         )}
+
+        {/* More modes */}
+        <div>
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">More modes</p>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { href: "/hard", icon: Edit3, label: "Hard mode", desc: "Type the name" },
+              { href: "/timed", icon: Timer, label: "Timed mode", desc: "Beat the clock" },
+              { href: "/region", icon: Globe, label: "Region mode", desc: "Practice by continent" },
+              { href: "/streak", icon: Zap, label: "Streak mode", desc: "How far can you go?" },
+            ].map(({ href, icon: Icon, label, desc }) => (
+              <Link
+                key={href}
+                href={href}
+                className="flex items-center gap-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2.5 hover:border-amber-400 transition-all duration-200 active:scale-95 group"
+              >
+                <div className="w-8 h-8 bg-amber-50 dark:bg-amber-400/10 rounded-lg flex items-center justify-center shrink-0 group-hover:bg-amber-100 dark:group-hover:bg-amber-400/20 transition-colors">
+                  <Icon size={15} className="text-amber-500" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold text-slate-800 dark:text-slate-200 leading-tight">{label}</p>
+                  <p className="text-xs text-slate-400 leading-tight">{desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
 
         <InstallBanner />
 
