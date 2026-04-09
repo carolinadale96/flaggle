@@ -11,6 +11,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 import XPBar from "@/components/XPBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import Logo from "@/components/Logo";
+import InstallBanner from "@/components/InstallBanner";
 import Flame from "@/components/icons/Flame";
 import Trophy from "@/components/icons/Trophy";
 import CorrectIcon from "@/components/icons/CorrectIcon";
@@ -128,6 +129,8 @@ export default function HomePage() {
             Play Today →
           </Link>
         )}
+
+        <InstallBanner />
 
         <p className="text-slate-400 text-xs text-center">197 countries · resets at midnight</p>
 
