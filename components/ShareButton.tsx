@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { FLAGGLE_URL } from "@/lib/share";
 
 interface ShareButtonProps {
   text: string;
@@ -26,7 +27,7 @@ export default function ShareButton({ text }: ShareButtonProps) {
 
   async function handleNativeShare() {
     try {
-      await navigator.share({ text });
+      await navigator.share({ text, url: FLAGGLE_URL });
     } catch {
       // user cancelled or not supported — fall back to copy
       await copyText(text);
@@ -45,7 +46,7 @@ export default function ShareButton({ text }: ShareButtonProps) {
     // Use native share sheet if available — passes text without URL encoding (no emoji mangling)
     if (navigator.share) {
       try {
-        await navigator.share({ text });
+        await navigator.share({ text, url: FLAGGLE_URL });
         return;
       } catch {
         // user cancelled — do nothing
