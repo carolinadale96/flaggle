@@ -20,8 +20,6 @@ export function buildShareText(
     "",
     emojiRow,
     "",
-    "https://flaggle-zeta.vercel.app",
+    "flaggle-zeta.vercel.app",
   ].join("\n");
 }
-
-export const FLAGGLE_URL = "https://flaggle-zeta.vercel.app";

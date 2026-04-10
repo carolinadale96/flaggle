@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { FLAGGLE_URL } from "@/lib/share";
 
 interface ShareButtonProps {
   text: string;
@@ -27,7 +26,7 @@ export default function ShareButton({ text }: ShareButtonProps) {
 
   async function handleNativeShare() {
     try {
-      await navigator.share({ text, url: FLAGGLE_URL });
+      await navigator.share({ text });
     } catch {
       // user cancelled or not supported — fall back to copy
       await copyText(text);
